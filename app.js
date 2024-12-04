@@ -13,12 +13,16 @@ const multer = require('multer')
  require('dotenv').config()
 
 
-mongoose.connect(process.env.MONGODB_URL)
+
+// mongoose.connect(process.env.MONGODB_URL)
+
 
 const userRouter = require('./routes/user');
 const adminRouter = require('./routes/admin');
+const connectDB = require('./config/db');
 // const { handlebars } = require('hbs');
 
+connectDB()
 const app = express();
 
 
