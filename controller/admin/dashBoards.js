@@ -1,7 +1,6 @@
 const moment = require('moment');
 const Sale = require('../../model/order')
 const Order = require('../../model/order');
-const PDFDocument = require('pdfkit')
 const hbs = require('hbs')
 
 let months        = []

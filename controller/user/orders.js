@@ -1,7 +1,6 @@
 const Orders  = require('../../model/order')
 const Address = require('../../model/address')
 const moment  = require('moment')
-const pdfkit  = require('pdfkit')
 const fs      = require('fs')
 const helper  = require('../../helpers/user.helper')
 const User    = require('../../model/userModel')

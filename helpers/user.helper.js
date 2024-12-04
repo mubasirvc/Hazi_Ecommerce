@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer')
 const argon2 = require('argon2')
-const PDFDocument = require('pdfkit');
+// const PDFDocument = require('pdfkit');
 const fs = require('fs');
 
 
@@ -66,70 +66,71 @@ const hashPassword = async (pasword) => {
 
 
 
-async function generateInvoice(order, address, user, filename) {
+// async function generateInvoice(order, address, user, filename) {
 
-    const doc = new PDFDocument();
+//     const doc = new PDFDocument();
   
-    const stream = doc.pipe(fs.createWriteStream(`./pdf/${filename}`)); // use a relative path
+//     const stream = doc.pipe(fs.createWriteStream(`./pdf/${filename}`)); // use a relative path
   
-    doc.fontSize(25).text(`Invoice #${order._id}`, 100, 100);
-    doc.moveDown();
-    doc.fontSize(16).text(`Date: ${order.date}`);
-    doc.moveDown();
-    doc.fontSize(16).text(`Customer Information:`);
-    doc.fontSize(14).text(`${user.name}`);
-    doc.fontSize(14).text(`${address.adressLine1}`);
-    doc.fontSize(14).text(`${address.city}, ${address.state} ${address.pin}`);
-    doc.moveDown();
-    doc.fontSize(16).text(`Product Information:`);
+//     doc.fontSize(25).text(`Invoice #${order._id}`, 100, 100);
+//     doc.moveDown();
+//     doc.fontSize(16).text(`Date: ${order.date}`);
+//     doc.moveDown();
+//     doc.fontSize(16).text(`Customer Information:`);
+//     doc.fontSize(14).text(`${user.name}`);
+//     doc.fontSize(14).text(`${address.adressLine1}`);
+//     doc.fontSize(14).text(`${address.city}, ${address.state} ${address.pin}`);
+//     doc.moveDown();
+//     doc.fontSize(16).text(`Product Information:`);
   
-    let y = doc.y + 15;
-    order.product.forEach((product) => {
-      doc.fontSize(14).text(`Product Name: ${product.name}`, 100, y);
-      doc.fontSize(14).text(`Product Price: ${product.price}`, 100, y + 20);
-      doc.fontSize(14).text(`Quantity: ${product.quantity}`, 100, y + 40);
-      y += 100;
-    });
+//     let y = doc.y + 15;
+//     order.product.forEach((product) => {
+//       doc.fontSize(14).text(`Product Name: ${product.name}`, 100, y);
+//       doc.fontSize(14).text(`Product Price: ${product.price}`, 100, y + 20);
+//       doc.fontSize(14).text(`Quantity: ${product.quantity}`, 100, y + 40);
+//       y += 100;
+//     });
   
-    doc.fontSize(14).text(`Total: ${order.total}`);
-    doc.end();
+//     doc.fontSize(14).text(`Total: ${order.total}`);
+//     doc.end();
   
-    return stream;
-  }
-  async function generateInvoice(order, address, user, filename) {
+//     return stream;
+//   }
 
-    const doc = new PDFDocument();
+//   async function generateInvoice(order, address, user, filename) {
+
+//     const doc = new PDFDocument();
   
-    const stream = doc.pipe(fs.createWriteStream(`./pdf/${filename}`)); // use a relative path
+//     const stream = doc.pipe(fs.createWriteStream(`./pdf/${filename}`)); // use a relative path
   
-    doc.fontSize(25).text(`Invoice #${order._id}`, 100, 100);
-    doc.moveDown();
-    doc.fontSize(16).text(`Date: ${order.date}`);
-    doc.moveDown();
-    doc.fontSize(16).text(`Customer Information:`);
-    doc.fontSize(14).text(`${user.name}`);
-    doc.fontSize(14).text(`${address.adressLine1}`);
-    doc.fontSize(14).text(`${address.city}, ${address.state} ${address.pin}`);
-    doc.moveDown();
-    doc.fontSize(16).text(`Product Information:`);
+//     doc.fontSize(25).text(`Invoice #${order._id}`, 100, 100);
+//     doc.moveDown();
+//     doc.fontSize(16).text(`Date: ${order.date}`);
+//     doc.moveDown();
+//     doc.fontSize(16).text(`Customer Information:`);
+//     doc.fontSize(14).text(`${user.name}`);
+//     doc.fontSize(14).text(`${address.adressLine1}`);
+//     doc.fontSize(14).text(`${address.city}, ${address.state} ${address.pin}`);
+//     doc.moveDown();
+//     doc.fontSize(16).text(`Product Information:`);
   
-    let y = doc.y + 15;
-    order.product.forEach((product) => {
-      doc.fontSize(14).text(`Product Name: ${product.name}`, 100, y);
-      doc.fontSize(14).text(`Product Price: ${product.price}`, 100, y + 20);
-      doc.fontSize(14).text(`Quantity: ${product.quantity}`, 100, y + 40);
-      y += 100;
-    });
+//     let y = doc.y + 15;
+//     order.product.forEach((product) => {
+//       doc.fontSize(14).text(`Product Name: ${product.name}`, 100, y);
+//       doc.fontSize(14).text(`Product Price: ${product.price}`, 100, y + 20);
+//       doc.fontSize(14).text(`Quantity: ${product.quantity}`, 100, y + 40);
+//       y += 100;
+//     });
   
-    doc.fontSize(14).text(`Total: ${order.total}`);
-    doc.end();
+//     doc.fontSize(14).text(`Total: ${order.total}`);
+//     doc.end();
   
-    return stream;
-  }
+//     return stream;
+//   }
     
   
 
 
 
 
-module.exports = {verifyEmail, generateOtp, hashPassword, generateInvoice}
+module.exports = {verifyEmail, generateOtp, hashPassword}
