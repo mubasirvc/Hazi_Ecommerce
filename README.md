@@ -48,7 +48,7 @@ Hazi is an intuitive and user-friendly e-commerce platform designed to sell dres
 
 2. Setup environment variables:
    Create a .env file in the root directory with the following:
-
+   ```bash
    PORT=5000
    MONGO_URL=<your-mongodb-url>
    key_id = <your-razorpay_key_id>,
@@ -58,11 +58,11 @@ Hazi is an intuitive and user-friendly e-commerce platform designed to sell dres
    SMTP_PASS = <your-SMTP_PASSWORD>
    SMTP_PORT = <your-SMTP_PORT>
 
-3. Install dependencies:  
+4. Install dependencies:  
    ```bash
    npm install
 
-4. Start the development server:  
+5. Start the development server:  
    ```bash
    npm start
 
