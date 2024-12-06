@@ -43,7 +43,7 @@ Hazi is an intuitive and user-friendly e-commerce platform designed to sell dres
 
 1. Clone the repository:  
    ```bash
-   git clone git@github.com:mubasirvc/EduFlex-frontend-.git
+   git clone git@github.com:mubasirvc/Hazi_Ecommerce.git
    cd HAZI_ECOMMERCE
 
 2. Setup environment variables:
