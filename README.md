@@ -68,6 +68,11 @@ Hazi is an intuitive and user-friendly e-commerce platform designed to sell dres
 
 4. Open your browser and navigate to http://localhost:3000:  
 
+## **Dummy Accounts**
+  
+### **End User**
+- **Email**: `mubasirumbi@gmail.com`  
+- **Password**: `12345678`
 
 ## **Screenshots**
 
